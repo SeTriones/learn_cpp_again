@@ -20,6 +20,15 @@ int main(int argc, char* argv[]) {
 	*p1 = 1;
 	std::cout << "i=" << i << std::endl;
 
+	int arr[] = {1, 2, 3};
+	// auto changes array to pointer
+	auto p = arr;
+	*p = 100;
+	for (size_t i = 0; i < 3; i++) {
+		std::cout << arr[i] << " ";
+	}
+	std::cout << std::endl;
+
 	// p2 is const int*
 	auto p2 = &x;
 	// you get a error here
