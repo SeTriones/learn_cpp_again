@@ -9,6 +9,10 @@ void print_array(int arr[10]) {
 }
 
 int main(int argc, char* argv[]) {
+	// another name
+	using my_array = int[10];
+	typedef int my_array2[10];
+
 	int arr1[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	int arr2[10] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 	// arr_ptr is pointer to int array with capacity 10
