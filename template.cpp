@@ -17,6 +17,15 @@ void foo(const T &t, Args & ... args) {
 	return;
 }
 
+template <typename T>
+T& print_single(T &t) {
+	return t;
+}
+
+template <typename... Args>
+void print(Args & ... args) {
+	foo(print_single(args)...);
+}
 
 void test_template_parameter_packet() {
 	int i = 0;
@@ -28,6 +37,8 @@ void test_template_parameter_packet() {
 	foo(i, b);
 	cout << "1+2 paramters" << endl;
 	foo(i, b, s);
+	cout << "expand" << endl;
+	print(i, b, s);
 }
 
 int main(int argc, char* argv[]) {
